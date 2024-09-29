@@ -7,7 +7,6 @@ import 'package:youapp_technical_test/presentation/bloc/profile/profile_bloc.dar
 import 'package:youapp_technical_test/core/constants/app_colors.dart';
 import 'package:youapp_technical_test/data/models/profile_model.dart';
 import 'package:youapp_technical_test/data/repositories/token_repository.dart';
-import 'package:youapp_technical_test/presentation/pages/login_page.dart';
 import 'package:youapp_technical_test/presentation/widgets/about_card.dart';
 import 'package:youapp_technical_test/presentation/widgets/interest_card.dart';
 import 'package:youapp_technical_test/presentation/widgets/profile_card.dart';

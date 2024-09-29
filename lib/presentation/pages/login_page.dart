@@ -4,8 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:youapp_technical_test/presentation/bloc/auth/auth_bloc.dart';
 import 'package:youapp_technical_test/core/constants/app_colors.dart';
 import 'package:youapp_technical_test/data/models/auth_model.dart';
-import 'package:youapp_technical_test/presentation/pages/profile_page.dart';
-import 'package:youapp_technical_test/presentation/pages/register_page.dart';
 import 'package:youapp_technical_test/presentation/widgets/custom_button.dart';
 import 'package:youapp_technical_test/presentation/widgets/custom_textfield.dart';
 import 'package:youapp_technical_test/presentation/widgets/gardient_text.dart';
@@ -162,14 +160,12 @@ class _LoginPageState extends State<LoginPage> {
     String email = '';
     String username = '';
 
-    // Cek apakah input berupa email atau username
     if (_usernameController.text.contains('@')) {
       email = _usernameController.text;
     } else {
       username = _usernameController.text;
     }
 
-    // Dispatch LoginEvent dengan field yang sesuai
     context.read<AuthBloc>().add(
           LoginEvent(
             authModel: AuthModel(
