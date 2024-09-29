@@ -8,8 +8,6 @@ import 'package:youapp_technical_test/presentation/bloc/auth/auth_bloc.dart';
 import 'package:youapp_technical_test/presentation/bloc/profile/profile_bloc.dart';
 import 'package:youapp_technical_test/data/repositories/auth_repository.dart';
 import 'package:youapp_technical_test/data/repositories/profile_repository.dart';
-import 'package:youapp_technical_test/presentation/pages/login_page.dart';
-import 'package:youapp_technical_test/presentation/pages/profile_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

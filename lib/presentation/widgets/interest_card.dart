@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:youapp_technical_test/core/constants/app_colors.dart';
 import 'package:youapp_technical_test/data/models/profile_model.dart';
-import 'package:youapp_technical_test/presentation/pages/interest_page.dart';
 
 class InterestCard extends StatelessWidget {
   final ProfileModel profile;
