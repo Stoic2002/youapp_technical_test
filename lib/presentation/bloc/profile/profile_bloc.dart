@@ -28,8 +28,8 @@ class ProfileBloc extends HydratedBloc<ProfileEvent, ProfileState> {
 
   Future<void> _onGetProfile(
       GetProfileEvent event, Emitter<ProfileState> emit) async {
+    emit(ProfileLoading());
     try {
-      emit(ProfileLoading());
       final profile = await profileRepository.getProfile();
       emit(ProfileLoaded(profile));
     } catch (e) {
@@ -51,7 +51,8 @@ class ProfileBloc extends HydratedBloc<ProfileEvent, ProfileState> {
   @override
   ProfileState? fromJson(Map<String, dynamic> json) {
     try {
-      final profile = ProfileModel.fromJson(json);
+      final profile =
+          ProfileModel.fromJson(json['profile'] as Map<String, dynamic>);
       return ProfileLoaded(profile);
     } catch (_) {
       return null;
@@ -61,27 +62,8 @@ class ProfileBloc extends HydratedBloc<ProfileEvent, ProfileState> {
   @override
   Map<String, dynamic>? toJson(ProfileState state) {
     if (state is ProfileLoaded) {
-      return state.profile.toJson();
+      return {'profile': state.profile.toJson()};
     }
     return null;
   }
-
-  // @override
-  // ProfileState? fromJson(Map<String, dynamic> json) {
-  //   try {
-  //     final profile =
-  //         ProfileModel.fromJson(json['profile'] as Map<String, dynamic>);
-  //     return ProfileLoaded(profile);
-  //   } catch (_) {
-  //     return null;
-  //   }
-  // }
-
-  // @override
-  // Map<String, dynamic>? toJson(ProfileState state) {
-  //   if (state is ProfileLoaded) {
-  //     return {'profile': state.profile.toJson()};
-  //   }
-  //   return null;
-  // }
 }

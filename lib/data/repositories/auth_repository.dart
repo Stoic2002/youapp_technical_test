@@ -7,7 +7,7 @@ import 'package:youapp_technical_test/data/repositories/token_repository.dart';
 
 class AuthRepository {
   final http.Client _client = http.Client();
-  final TokenRepository tokenRepo = TokenRepository();
+  TokenRepository tokenRepo = TokenRepository();
 
   Future<String> register(AuthModel authModel) async {
     final response = await _client.post(

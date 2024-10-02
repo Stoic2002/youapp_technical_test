@@ -18,14 +18,6 @@ class ProfileLoaded extends ProfileState {
 
   @override
   List<Object> get props => [profile];
-
-  ProfileLoaded copyWith({
-    ProfileModel? profile,
-  }) {
-    return ProfileLoaded(
-      profile ?? this.profile,
-    );
-  }
 }
 
 class ProfileError extends ProfileState {
